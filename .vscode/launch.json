@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "AstPrinter",
+            "request": "launch",
+            "mainClass": "jlox.com.craftinginterpreters.lox.AstPrinter",
+            "projectName": "project-based-learning_973a0d0b"
+        },
+        {
+            "type": "java",
+            "name": "GenerateAst",
+            "request": "launch",
+            "mainClass": "jlox.com.craftinginterpreters.tool.GenerateAst",
+            "projectName": "project-based-learning_973a0d0b"
+        },
+        {
+            "type": "java",
+            "name": "Lox",
+            "request": "launch",
+            "mainClass": "jlox.com.craftinginterpreters.lox.Lox",
+            "projectName": "project-based-learning_973a0d0b"
+        },
+        {
+            "type": "java",
             "name": "HelloWorld",
             "request": "launch",
             "mainClass": "HelloWorld",
