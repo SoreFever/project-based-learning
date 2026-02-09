@@ -24,6 +24,7 @@ class Scanner {
         keywords.put("false", FALSE);
         keywords.put("for", FOR);
         keywords.put("fun", FUN);
+        keywords.put("if", IF);
         keywords.put("nil", NIL);
         keywords.put("or", OR);
         keywords.put("print", PRINT);
@@ -85,8 +86,8 @@ class Scanner {
             case ' ':
             case '\r':
             case '\t':
+                // Ignore whitespace
                 break;
-            
             case '\n':
                 line++;
                 break;
@@ -118,8 +119,11 @@ class Scanner {
     private void number() {
         while (isDigit(peek())) advance();
 
+        // Look fore a fractional part.
         if (peek() == '.' && isDigit(peekNext())) {
+            // Consume the "."
             advance();
+            
             while (isDigit(peek())) advance();
         }
 
@@ -165,7 +169,7 @@ class Scanner {
 
     private boolean isAlpha(char c) {
         return (c >= 'a' && c <= 'z') ||
-                (c >= 'A' && c <= 'z') ||
+                (c >= 'A' && c <= 'Z') ||
                 c == '_';
     }
 
